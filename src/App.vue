@@ -1,26 +1,47 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <router-view />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
 }
 </script>
 
-<style>
+<style lang="scss">
+@import url('primevue/resources/themes/saga-blue/theme.css');
+@import url('primevue/resources/primevue.min.css');
+@import url('primeicons/primeicons.css');
+@import url('primevue/resources/themes/lara-light-indigo/theme.css');
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  width: 100%;
+  height: 100vh;
+  background: #8E2DE2;
+  background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);
+  background: linear-gradient(to right, #4A00E0, #8E2DE2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.p-paginator-bottom {
+  margin-top: 1.5rem;
+}
+
+.table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media screen and (max-width: 960px) {
+    align-items: start;
+	}
+}
+
+.confirmation-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>
