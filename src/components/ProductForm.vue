@@ -75,7 +75,7 @@ export default {
     store() {
       ApiController.store(this.productForm)
         .then(response => {
-          this.message(response);
+          this.message(response.data);
           this.$emit('refresh');
         })
         .catch(error => {
@@ -85,7 +85,7 @@ export default {
     update() {
       ApiController.update(this.productForm)
         .then(response => {
-          this.message(response);
+          this.message(response.data);
           this.$emit('refresh');
         })
         .catch(error => {
@@ -93,11 +93,11 @@ export default {
         });
     },
     message(data) {
-      const status = data.status === 200 ? 'success' : 'error';
+      const status = data.code === 'Ok' ? 'success' : 'error';
       this.$toast.add({
         severity: status,
-        summary: data.code || data.status,
-        detail: data.message || data.statusText,
+        summary: data.code,
+        detail: data.message,
         life: 3000
       });
     }
